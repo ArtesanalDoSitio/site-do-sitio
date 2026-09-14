@@ -93,3 +93,11 @@ export const configuracoesQuery = groq`
     endereco
   }
 `;
+
+export const sobreQuery = groq`
+  *[_type == "sobre"][0] {
+    titulo,
+    conteudo,
+    imagem
+  }
+`;
