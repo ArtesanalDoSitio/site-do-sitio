@@ -108,13 +108,13 @@ export default async function ProdutoPage({
 
         <div>
           {produto.categoria ? (
-            <span className="text-xs uppercase tracking-wide text-primary">
+            <span className="text-[calc(0.75rem*var(--escala-texto,1))] uppercase tracking-wide text-primary">
               {produto.categoria.titulo}
             </span>
           ) : null}
-          <h1 className="mt-1 font-display text-3xl text-ink">{produto.nome}</h1>
+          <h1 className="mt-1 font-display text-[calc(1.875rem*var(--escala-titulos,1))] text-titulo">{produto.nome}</h1>
           {produto.descricao ? (
-            <p className="mt-4 text-ink/80">{produto.descricao}</p>
+            <p className="mt-4 text-texto/80">{produto.descricao}</p>
           ) : null}
 
           <div className="mt-8">

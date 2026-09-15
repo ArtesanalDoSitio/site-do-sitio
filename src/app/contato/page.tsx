@@ -23,8 +23,8 @@ export default async function ContatoPage() {
 
   return (
     <div className="mx-auto max-w-content px-4 py-16 sm:px-6">
-      <h1 className="font-display text-3xl text-ink sm:text-4xl">Contato</h1>
-      <p className="mt-3 max-w-lg text-ink/70">
+      <h1 className="font-display text-[calc(1.875rem*var(--escala-titulos,1))] text-titulo sm:text-[calc(2.25rem*var(--escala-titulos,1))]">Contato</h1>
+      <p className="mt-3 max-w-lg text-texto/70">
         Prefere falar direto? Chame no WhatsApp. Se preferir, envie uma mensagem
         pelo formulário abaixo.
       </p>
@@ -39,8 +39,8 @@ export default async function ContatoPage() {
           />
           {config?.endereco ? (
             <div>
-              <p className="text-sm font-medium text-ink">Endereço</p>
-              <p className="text-sm text-ink/70">{config.endereco}</p>
+              <p className="text-[calc(0.875rem*var(--escala-texto,1))] font-medium text-texto">Endereço</p>
+              <p className="text-[calc(0.875rem*var(--escala-texto,1))] text-texto/70">{config.endereco}</p>
             </div>
           ) : null}
         </div>

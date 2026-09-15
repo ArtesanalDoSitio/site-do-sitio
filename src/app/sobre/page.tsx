@@ -67,7 +67,7 @@ export default async function SobrePage() {
 
   return (
     <div className="mx-auto max-w-content px-4 py-16 sm:px-6">
-      <h1 className="font-display text-3xl text-ink sm:text-4xl">{titulo}</h1>
+      <h1 className="font-display text-[calc(1.875rem*var(--escala-titulos,1))] text-titulo sm:text-[calc(2.25rem*var(--escala-titulos,1))]">{titulo}</h1>
 
       {sobre?.imagem ? (
         <div className="relative mt-8 aspect-[16/9] max-w-2xl overflow-hidden rounded-lg bg-neutral">
@@ -82,7 +82,7 @@ export default async function SobrePage() {
         </div>
       ) : null}
 
-      <div className="prose prose-neutral mt-6 max-w-2xl text-ink/80">
+      <div className="prose prose-neutral mt-6 max-w-2xl text-texto/80">
         <PortableText value={conteudo} />
       </div>
     </div>

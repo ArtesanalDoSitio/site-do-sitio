@@ -72,10 +72,10 @@ export default async function PostPage({
 
   return (
     <article className="mx-auto max-w-2xl px-4 py-16 sm:px-6">
-      <p className="text-xs uppercase tracking-wide text-ink/50">
+      <p className="text-[calc(0.75rem*var(--escala-texto,1))] uppercase tracking-wide text-texto/50">
         {formatDate(post.publicadoEm)}
       </p>
-      <h1 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
+      <h1 className="mt-2 font-display text-[calc(1.875rem*var(--escala-titulos,1))] text-titulo sm:text-[calc(2.25rem*var(--escala-titulos,1))]">
         {post.titulo}
       </h1>
 
@@ -92,7 +92,7 @@ export default async function PostPage({
         </div>
       ) : null}
 
-      <div className="prose prose-neutral mt-8 max-w-none text-ink/90">
+      <div className="prose prose-neutral mt-8 max-w-none text-texto/90">
         <PortableText value={post.conteudo} components={portableTextComponents} />
       </div>
     </article>

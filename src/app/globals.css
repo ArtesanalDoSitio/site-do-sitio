@@ -2,8 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Tipografia dinamica (controlada pelo Studio em configuracoes > tipografia).
+     Os valores abaixo sao os defaults atuais do site — se nada for configurado
+     no Studio, o visual permanece exatamente igual ao original. */
+  --escala-titulos: 1;
+  --escala-texto: 1;
+  --peso-titulos: 500;
+  --peso-texto: 400;
+  --estilo-titulos: normal;
+  --estilo-texto: normal;
+  --cor-titulos-rgb: 43 35 32; /* #2B2320 (ink) */
+  --cor-texto-rgb: 43 35 32; /* #2B2320 (ink) */
+}
+
 @layer base {
   body {
-    @apply bg-cream text-ink;
+    @apply bg-cream text-texto;
+    font-weight: var(--peso-texto);
+    font-style: var(--estilo-texto);
+  }
+
+  .font-display {
+    font-weight: var(--peso-titulos);
+    font-style: var(--estilo-titulos);
+  }
+}
+
+@layer components {
+  /* Ajusta o conteudo rico (blog, sobre) para acompanhar a cor e a fonte
+     escolhidas no Studio. O tamanho de fonte do prose fica fora do escopo do
+     controle de tamanho — apenas cor e familia tipografica sao herdadas. */
+  .prose {
+    --tw-prose-body: rgb(var(--cor-texto-rgb));
+    --tw-prose-headings: rgb(var(--cor-titulos-rgb));
+    --tw-prose-bold: rgb(var(--cor-titulos-rgb));
+    --tw-prose-links: theme("colors.primary");
   }
 }

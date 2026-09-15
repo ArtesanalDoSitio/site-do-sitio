@@ -18,10 +18,10 @@ export function WhatsAppButton({
   if (!href) return null;
 
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition";
+    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[calc(0.875rem*var(--escala-texto,1))] font-medium transition";
   const stylesByVariant = {
     solid: "bg-primary text-cream hover:opacity-90",
-    outline: "border border-ink text-ink hover:bg-ink hover:text-cream",
+    outline: "border border-ink text-texto hover:bg-ink hover:text-cream",
     "outline-light": "border border-cream text-cream hover:bg-cream hover:text-ink",
   } as const;
   const styles = stylesByVariant[variant];

@@ -93,7 +93,8 @@ export const configuracoesQuery = groq`
     endereco,
     heroImagem,
     heroTitulo,
-    heroTexto
+    heroTexto,
+    tipografia
   }
 `;
 

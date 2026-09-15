@@ -45,10 +45,10 @@ export function CatalogExplorer({
           <button
             type="button"
             onClick={() => setCategoriaAtiva("todas")}
-            className={`rounded-full border px-4 py-1.5 text-sm transition ${
+            className={`rounded-full border px-4 py-1.5 text-[calc(0.875rem*var(--escala-texto,1))] transition ${
               categoriaAtiva === "todas"
                 ? "border-primary bg-primary text-cream"
-                : "border-neutral text-ink/70 hover:border-ink"
+                : "border-neutral text-texto/70 hover:border-ink"
             }`}
           >
             Todas
@@ -58,10 +58,10 @@ export function CatalogExplorer({
               key={categoria._id}
               type="button"
               onClick={() => setCategoriaAtiva(categoria.slug)}
-              className={`rounded-full border px-4 py-1.5 text-sm transition ${
+              className={`rounded-full border px-4 py-1.5 text-[calc(0.875rem*var(--escala-texto,1))] transition ${
                 categoriaAtiva === categoria.slug
                   ? "border-primary bg-primary text-cream"
-                  : "border-neutral text-ink/70 hover:border-ink"
+                  : "border-neutral text-texto/70 hover:border-ink"
               }`}
             >
               {categoria.titulo}
@@ -74,7 +74,7 @@ export function CatalogExplorer({
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
           placeholder="Buscar produto..."
-          className="w-full rounded-full border border-neutral bg-cream px-4 py-2 text-sm text-ink placeholder:text-ink/40 focus:border-primary focus:outline-none sm:w-64"
+          className="w-full rounded-full border border-neutral bg-cream px-4 py-2 text-[calc(0.875rem*var(--escala-texto,1))] text-texto placeholder:text-texto/40 focus:border-primary focus:outline-none sm:w-64"
         />
       </div>
 
@@ -89,7 +89,7 @@ export function CatalogExplorer({
                 setCategoriaAtiva("todas");
                 setBusca("");
               }}
-              className="mt-2 rounded-full border border-ink px-5 py-2 text-sm text-ink transition hover:bg-ink hover:text-cream"
+              className="mt-2 rounded-full border border-ink px-5 py-2 text-[calc(0.875rem*var(--escala-texto,1))] text-texto transition hover:bg-ink hover:text-cream"
             >
               Limpar filtros
             </button>

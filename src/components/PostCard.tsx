@@ -31,12 +31,12 @@ export function PostCard({ post }: { post: Post }) {
         ) : null}
       </div>
       <div className="space-y-1 p-4">
-        <span className="text-xs uppercase tracking-wide text-ink/50">
+        <span className="text-[calc(0.75rem*var(--escala-texto,1))] uppercase tracking-wide text-texto/50">
           {formatDate(post.publicadoEm)}
         </span>
-        <h3 className="font-display text-lg text-ink">{post.titulo}</h3>
+        <h3 className="font-display text-[calc(1.125rem*var(--escala-titulos,1))] text-titulo">{post.titulo}</h3>
         {post.resumo ? (
-          <p className="line-clamp-2 text-sm text-ink/70">{post.resumo}</p>
+          <p className="line-clamp-2 text-[calc(0.875rem*var(--escala-texto,1))] text-texto/70">{post.resumo}</p>
         ) : null}
       </div>
     </Link>

@@ -33,13 +33,13 @@ export function ProductCard({ produto }: { produto: Produto }) {
       </div>
       <div className="space-y-1 p-4">
         {produto.categoria ? (
-          <span className="text-xs uppercase tracking-wide text-primary">
+          <span className="text-[calc(0.75rem*var(--escala-texto,1))] uppercase tracking-wide text-primary">
             {produto.categoria.titulo}
           </span>
         ) : null}
-        <h3 className="font-display text-lg text-ink">{produto.nome}</h3>
+        <h3 className="font-display text-[calc(1.125rem*var(--escala-titulos,1))] text-titulo">{produto.nome}</h3>
         {produto.descricaoCurta ? (
-          <p className="line-clamp-2 text-sm text-ink/70">
+          <p className="line-clamp-2 text-[calc(0.875rem*var(--escala-texto,1))] text-texto/70">
             {produto.descricaoCurta}
           </p>
         ) : null}

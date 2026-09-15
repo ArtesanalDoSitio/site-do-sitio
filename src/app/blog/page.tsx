@@ -27,8 +27,8 @@ export default async function BlogPage() {
 
   return (
     <div className="mx-auto max-w-content px-4 py-16 sm:px-6">
-      <h1 className="font-display text-3xl text-ink sm:text-4xl">Blog</h1>
-      <p className="mt-3 max-w-lg text-ink/70">
+      <h1 className="font-display text-[calc(1.875rem*var(--escala-titulos,1))] text-titulo sm:text-[calc(2.25rem*var(--escala-titulos,1))]">Blog</h1>
+      <p className="mt-3 max-w-lg text-texto/70">
         Histórias e novidades sobre nossos produtos e processo artesanal.
       </p>
 

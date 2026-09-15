@@ -27,13 +27,13 @@ export async function Footer() {
     <footer className="bg-footer text-cream">
       <div className="mx-auto grid max-w-content gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-display text-lg text-cream">Artesanal do Sítio</p>
-          <p className="mt-2 text-sm text-cream/70">
+          <p className="font-display text-[calc(1.125rem*var(--escala-titulos,1))] text-cream">Artesanal do Sítio</p>
+          <p className="mt-2 text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70">
             Produtos artesanais gourmet, feitos com carinho.
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 text-sm text-cream/70">
+        <div className="flex flex-col gap-2 text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70">
           <p className="font-medium text-cream">Navegação</p>
           <Link href="/catalogo" className="hover:text-cream">Produtos</Link>
           <Link href="/blog" className="hover:text-cream">Blog</Link>
@@ -42,9 +42,9 @@ export async function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <p className="text-sm font-medium text-cream">Fale com a gente</p>
+          <p className="text-[calc(0.875rem*var(--escala-texto,1))] font-medium text-cream">Fale com a gente</p>
           {config?.endereco ? (
-            <p className="text-sm text-cream/70">{config.endereco}</p>
+            <p className="text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70">{config.endereco}</p>
           ) : null}
           <div className="flex flex-wrap gap-3">
             <WhatsAppButton
@@ -57,7 +57,7 @@ export async function Footer() {
                 href={config.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-cream px-5 py-2.5 text-sm text-cream transition hover:bg-cream hover:text-footer"
+                className="inline-flex items-center rounded-full border border-cream px-5 py-2.5 text-[calc(0.875rem*var(--escala-texto,1))] text-cream transition hover:bg-cream hover:text-footer"
               >
                 Instagram
               </a>
@@ -66,7 +66,7 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-cream/10 px-4 py-4 text-center text-xs text-cream/50 sm:px-6">
+      <div className="border-t border-cream/10 px-4 py-4 text-center text-[calc(0.75rem*var(--escala-texto,1))] text-cream/50 sm:px-6">
         © {ano} Artesanal do Sítio. Todos os direitos reservados.
       </div>
     </footer>
