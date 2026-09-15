@@ -22,7 +22,7 @@ export function Header() {
       <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="flex flex-col items-center gap-1 text-center font-display text-base tracking-tight text-ink sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-xl"
+          className="flex flex-col items-center gap-1 text-center font-display text-2xl tracking-tight text-ink sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-3xl"
         >
           <Image
             src="/images/logo-artesanal-do-sitio.png"
@@ -30,7 +30,7 @@ export function Header() {
             width={256}
             height={261}
             priority
-            className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+            className="h-[54px] w-[54px] object-contain sm:h-[60px] sm:w-[60px]"
           />
           Artesanal do Sítio
         </Link>
