@@ -27,6 +27,26 @@ export default defineType({
       type: "text",
       rows: 2,
     }),
+    defineField({
+      name: "heroImagem",
+      title: "Foto de capa (Home)",
+      description: "Foto de fundo exibida no topo da página inicial",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "heroTitulo",
+      title: "Título de capa (Home)",
+      description: "Frase principal exibida sobre a foto de capa",
+      type: "string",
+    }),
+    defineField({
+      name: "heroTexto",
+      title: "Texto de capa (Home)",
+      description: "Frase de apoio exibida abaixo do título, sobre a foto de capa",
+      type: "text",
+      rows: 2,
+    }),
   ],
   preview: {
     prepare() {

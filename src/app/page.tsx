@@ -5,6 +5,7 @@ import { PostCard } from "@/components/PostCard";
 import { ProductCard } from "@/components/ProductCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { client } from "@/sanity/lib/client";
+import { urlForImage } from "@/sanity/lib/image";
 import {
   configuracoesQuery,
   postsRecentesQuery,
@@ -27,29 +28,46 @@ async function getHomeData() {
 export default async function HomePage() {
   const { produtosDestaque, postsRecentes, config } = await getHomeData();
 
+  const heroImagemUrl = config?.heroImagem
+    ? urlForImage(config.heroImagem).width(1920).height(1080).url()
+    : null;
+  const heroTitulo =
+    config?.heroTitulo || "Sabor artesanal, feito com cuidado todos os dias";
+  const heroTexto =
+    config?.heroTexto ||
+    "Pães, doces e produtos gourmet preparados com técnica artesanal e ingredientes selecionados.";
+
   return (
     <div>
       <section className="relative overflow-hidden border-b border-neutral">
-        <Image
-          src="/images/hero-pao-artesanal.jpg"
-          alt="Pão artesanal de fermentação natural, recém-assado"
-          fill
-          priority
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgQF/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQIDAAQREiFBEyJRYYH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAiH/2gAMAwEAAhEDEQA/ABCkNxJcsw2QgDDbH3RGiO6jdSUBBAwdgftZPVkiMjRuVJxnHNTCaRpO5yR44ousV5Uh/9k="
-          className="object-cover"
-        />
+        {heroImagemUrl ? (
+          <Image
+            src={heroImagemUrl}
+            alt={heroTitulo}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        ) : (
+          <Image
+            src="/images/hero-pao-artesanal.jpg"
+            alt="Pão artesanal de fermentação natural, recém-assado"
+            fill
+            priority
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgQF/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQIDAAQREiFBEyJRYYH/xAAUAQEAAAAAAAAAAAAAAAAAAAAD/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAiH/2gAMAwEAAhEDEQA/ABCkNxJcsw2QgDDbH3RGiO6jdSUBBAwdgftZPVkiMjRuVJxnHNTCaRpO5yR44ousV5Uh/9k="
+            className="object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20" />
 
         <div className="relative mx-auto flex max-w-content flex-col items-start gap-6 px-4 py-24 sm:px-6 sm:py-32">
           <h1 className="max-w-xl font-display text-4xl leading-tight text-cream sm:text-5xl">
-            Sabor artesanal, feito com cuidado todos os dias
+            {heroTitulo}
           </h1>
-          <p className="max-w-lg text-cream/85">
-            Pães, doces e produtos gourmet preparados com técnica artesanal e
-            ingredientes selecionados.
-          </p>
+          <p className="max-w-lg text-cream/85">{heroTexto}</p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/catalogo"

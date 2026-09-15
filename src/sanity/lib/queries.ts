@@ -90,7 +90,10 @@ export const configuracoesQuery = groq`
     whatsappNumero,
     whatsappMensagemPadrao,
     instagram,
-    endereco
+    endereco,
+    heroImagem,
+    heroTitulo,
+    heroTexto
   }
 `;
 
