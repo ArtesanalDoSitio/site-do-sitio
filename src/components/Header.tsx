@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -19,7 +20,18 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-neutral bg-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="font-display text-xl tracking-tight text-ink">
+        <Link
+          href="/"
+          className="flex flex-col items-center gap-1 text-center font-display text-base tracking-tight text-ink sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-xl"
+        >
+          <Image
+            src="/images/logo-artesanal-do-sitio.png"
+            alt="Artesanal do Sítio"
+            width={256}
+            height={261}
+            priority
+            className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+          />
           Artesanal do Sítio
         </Link>
 

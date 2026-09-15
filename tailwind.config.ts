@@ -15,6 +15,7 @@ const config: Config = {
         primary: "#B5502C", // acento terracota
         secondary: "#D3A24A", // acento mostarda
         neutral: "#E4D9C8", // bege medio
+        footer: "#0f2015", // verde escuro extraido da logo, fundo do rodape
       },
       fontFamily: {
         display: ["var(--font-display)"],
