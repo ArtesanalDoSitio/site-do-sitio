@@ -22,7 +22,7 @@ export function Header() {
       <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="flex flex-col items-center gap-1 text-center font-display text-[calc(1.5rem*var(--escala-titulos,1))] tracking-tight text-titulo sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-[calc(1.875rem*var(--escala-titulos,1))]"
+          className="flex flex-col items-center gap-1 text-center font-display text-[calc(2.25rem*var(--escala-titulos,1))] tracking-tight text-titulo sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-[calc(2.8125rem*var(--escala-titulos,1))]"
         >
           <Image
             src="/images/logo-artesanal-do-sitio.png"
@@ -30,7 +30,7 @@ export function Header() {
             width={256}
             height={261}
             priority
-            className="h-[54px] w-[54px] object-contain sm:h-[60px] sm:w-[60px]"
+            className="h-[81px] w-[81px] object-contain sm:h-[90px] sm:w-[90px]"
           />
           Artesanal do Sítio
         </Link>
@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[calc(0.875rem*var(--escala-texto,1))] transition ${
+                className={`text-[calc(1.70625rem*var(--escala-texto,1))] transition ${
                   active ? "text-primary" : "text-texto/80 hover:text-texto"
                 }`}
               >
