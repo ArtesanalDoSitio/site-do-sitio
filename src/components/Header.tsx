@@ -45,7 +45,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[calc(1.70625rem*var(--escala-texto,1))] transition ${
+                className={`text-[calc(1.3125rem*var(--escala-texto,1))] transition ${
                   active ? "text-primary" : "text-texto/80 hover:text-texto"
                 }`}
               >
