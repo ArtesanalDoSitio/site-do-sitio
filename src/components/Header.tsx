@@ -29,10 +29,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral bg-cream/95 backdrop-blur">
-      <div className="relative mx-auto flex max-w-content items-center justify-center px-4 py-4 sm:justify-between sm:px-6">
+      <div className="relative mx-auto flex max-w-content items-center justify-center px-4 py-4 desktop:justify-between desktop:px-6">
         <Link
           href="/"
-          className="flex flex-col items-center gap-1 text-center font-display text-[calc(2.25rem*var(--escala-titulos,1))] tracking-tight text-titulo sm:flex-row sm:items-center sm:gap-2 sm:text-left sm:text-[calc(2.8125rem*var(--escala-titulos,1))]"
+          className="flex flex-col items-center gap-1 text-center font-display text-[calc(2.25rem*var(--escala-titulos,1))] tracking-tight text-titulo desktop:flex-row desktop:items-center desktop:gap-2 desktop:text-left desktop:text-[calc(2.8125rem*var(--escala-titulos,1))]"
         >
           <Image
             src="/images/logo-artesanal-do-sitio.png"
@@ -40,14 +40,14 @@ export function Header() {
             width={256}
             height={261}
             priority
-            className={`h-[81px] w-[81px] object-contain sm:block sm:h-[90px] sm:w-[90px] ${
+            className={`h-[81px] w-[81px] object-contain desktop:block desktop:h-[90px] desktop:w-[90px] ${
               scrolled ? "hidden" : "block"
             }`}
           />
           Artesanal do Sítio
         </Link>
 
-        <nav className="hidden gap-8 sm:flex">
+        <nav className="hidden gap-8 desktop:flex">
           {LINKS.map((link) => {
             const active =
               link.href === "/"
@@ -72,7 +72,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label="Abrir menu"
-          className="absolute right-4 flex h-9 w-9 flex-col items-center justify-center gap-1.5 sm:hidden"
+          className="absolute right-4 flex h-9 w-9 flex-col items-center justify-center gap-1.5 desktop:hidden"
         >
           <span
             className={`h-0.5 w-6 bg-ink transition ${open ? "translate-y-2 rotate-45" : ""}`}
@@ -85,7 +85,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <nav className="flex flex-col gap-1 border-t border-neutral px-4 pb-4 sm:hidden">
+        <nav className="flex flex-col gap-1 border-t border-neutral px-4 pb-4 desktop:hidden">
           {LINKS.map((link) => (
             <Link
               key={link.href}

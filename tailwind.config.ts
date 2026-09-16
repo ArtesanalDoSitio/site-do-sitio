@@ -40,6 +40,13 @@ const config: Config = {
       maxWidth: {
         content: "1200px",
       },
+      screens: {
+        // Breakpoint usado apenas pelo layout do header (menu/hamburguer).
+        // Alem da largura, exige altura minima para nao tratar um celular
+        // deitado (largura grande, altura baixa) como desktop — nesse caso
+        // o header mobile (com hamburguer) continua sendo usado.
+        desktop: { raw: "(min-width: 640px) and (min-height: 500px)" },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
