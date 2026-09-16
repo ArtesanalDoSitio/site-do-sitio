@@ -8,7 +8,9 @@ type Configuracoes = {
   whatsappNumero?: string;
   whatsappMensagemPadrao?: string;
   instagram?: string;
+  email?: string;
   endereco?: string;
+  rodapeTexto?: string;
 };
 
 async function getConfiguracoes(): Promise<Configuracoes | null> {
@@ -29,7 +31,7 @@ export async function Footer() {
         <div>
           <p className="font-display text-[calc(1.125rem*var(--escala-titulos,1))] text-cream">Artesanal do Sítio</p>
           <p className="mt-2 text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70">
-            Produtos artesanais gourmet, feitos com carinho.
+            {config?.rodapeTexto || "Produtos artesanais gourmet, feitos com carinho."}
           </p>
         </div>
 
@@ -43,6 +45,14 @@ export async function Footer() {
 
         <div className="flex flex-col gap-3">
           <p className="text-[calc(0.875rem*var(--escala-texto,1))] font-medium text-cream">Fale com a gente</p>
+          {config?.email ? (
+            <a
+              href={`mailto:${config.email}`}
+              className="text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70 hover:text-cream"
+            >
+              {config.email}
+            </a>
+          ) : null}
           {config?.endereco ? (
             <p className="text-[calc(0.875rem*var(--escala-texto,1))] text-cream/70">{config.endereco}</p>
           ) : null}

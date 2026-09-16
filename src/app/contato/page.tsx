@@ -37,6 +37,17 @@ export default async function ContatoPage() {
             numero={config?.whatsappNumero}
             mensagem={config?.whatsappMensagemPadrao}
           />
+          {config?.email ? (
+            <div>
+              <p className="text-[calc(0.875rem*var(--escala-texto,1))] font-medium text-texto">E-mail</p>
+              <a
+                href={`mailto:${config.email}`}
+                className="text-[calc(0.875rem*var(--escala-texto,1))] text-primary hover:underline"
+              >
+                {config.email}
+              </a>
+            </div>
+          ) : null}
           {config?.endereco ? (
             <div>
               <p className="text-[calc(0.875rem*var(--escala-texto,1))] font-medium text-texto">Endereço</p>

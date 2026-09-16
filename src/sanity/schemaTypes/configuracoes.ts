@@ -22,10 +22,21 @@ export default defineType({
       type: "url",
     }),
     defineField({
+      name: "email",
+      title: "E-mail de contato",
+      type: "email",
+    }),
+    defineField({
       name: "endereco",
       title: "Endereço",
       type: "text",
       rows: 2,
+    }),
+    defineField({
+      name: "rodapeTexto",
+      title: "Texto do rodapé",
+      description: "Frase exibida abaixo do nome da marca, no rodapé do site.",
+      type: "string",
     }),
     defineField({
       name: "heroImagem",
